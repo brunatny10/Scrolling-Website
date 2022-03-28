@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Scrolling Wepsite</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Logo</a>
+        <ul>
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Work</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </header>
+    <section>
+        <img src="stars.png" id="stars">
+        <img src="moon.png" id="moon">
+        <img src="mountains_behind.png" id="mountains_behind">
+        <h2 id="text">Moon Light</h2>
+        <a href="#sec" id="btn">Explore</a>
+        <img src="mountains_front.png" id="mountains_front">
+    </section>
+    <div class="sec" id="sec">
+        <h2>Parallax Scrolling Effects</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            Optio ipsam debitis vitae rerum esse sint totam quo veniam consequatur voluptas, beatae quaerat quasi. 
+            Dignissimos nisi facere atque consequatur quaerat. Nobis. Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Velit aspernatur nobis soluta numquam sapiente aperiam architecto, qui adipisci accusamus quis nihil. 
+            Earum cum consectetur dignissimos ut exercitationem cupiditate vel tenetur. Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Minima maiores error nulla, facilis voluptatum, reiciendis sit illum dolorum commodi consectetur repellat quibusdam 
+            quidem deleniti odit assumenda nobis quam obcaecati enim!<br><br>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            Optio ipsam debitis vitae rerum esse sint totam quo veniam consequatur voluptas, beatae quaerat quasi. 
+            Dignissimos nisi facere atque consequatur quaerat. Nobis. Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Velit aspernatur nobis soluta numquam sapiente aperiam architecto, qui adipisci accusamus quis nihil. 
+            Earum cum consectetur dignissimos ut exercitationem cupiditate vel tenetur.<br><br>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            Optio ipsam debitis vitae rerum esse sint totam quo veniam consequatur voluptas, beatae quaerat quasi. 
+            Dignissimos nisi facere atque consequatur quaerat. Nobis. Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Velit aspernatur nobis soluta numquam sapiente aperiam architecto, qui adipisci accusamus quis nihil. 
+            Earum cum consectetur dignissimos ut exercitationem cupiditate vel tenetur.<br><br>
+            Minima maiores error nulla, facilis voluptatum, reiciendis sit illum dolorum commodi consectetur repellat quibusdam 
+            quidem deleniti odit assumenda nobis quam obcaecati enim! Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            Optio ipsam debitis vitae rerum esse sint totam quo veniam consequatur voluptas, beatae quaerat quasi. 
+            Dignissimos nisi facere atque consequatur quaerat. Nobis. Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Velit aspernatur nobis soluta numquam sapiente aperiam architecto, qui adipisci accusamus quis nihil.<br><br>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, porro, eveniet excepturi, 
+            quis facere nisi fuga suscipit provident voluptatem fugit natus! Accusantium nemo atque, non enim nesciunt officiis autem laborum. </p>
+    </div>
+
+    <script>
+        let stars = document.getElementById("stars");
+        let moon = document.getElementById("moon");
+        let mountains_behind = document.getElementById("mountains_behind");
+        let text = document.getElementById("text");
+        let btn = document.getElementById("btn");
+        let mountains_front = document.getElementById("mountains_front");
+        let header = document.querySelector("header");
+
+    window.addEventListener('scroll', function(){
+        let value = window.scrollY;
+        stars.style.left = value * 0.25 + 'px';
+        moon.style.top = value * 1.05 + 'px';
+        mountains_behind.style.left = value * 0.5 + 'px';
+        mountains_front.style.left = value * 0 + 'px';
+        text.style.marginRight = value * 4 + 'px';
+        text.style.marginTop = value * 1.5 + 'px';
+        btn.style.marginTop = value * 4 + 'px';
+        header.style.top = value * 0.5 + 'px';
+
+    })
+    
+    </script>
+</body>
+</html>
